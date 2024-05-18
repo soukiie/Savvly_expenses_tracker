@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "694270204267",
+    "project_id": "savvly-7b7ae",
+    "storage_bucket": "savvly-7b7ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694270204267:android:8274b9b3624e21e05a542e",
+        "android_client_info": {
+          "package_name": "com.soukiie.savvly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoiExjX0LrNjydGKbdtjSf7YNqzlH2h3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
