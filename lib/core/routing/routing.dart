@@ -1,5 +1,6 @@
 import 'package:expenses_tracker/core/networking/firebase_helper.dart';
 import 'package:expenses_tracker/core/routing/routes.dart';
+import 'package:expenses_tracker/features/home/home_screen.dart';
 import 'package:expenses_tracker/features/login/logic/cubit/login_cubit.dart';
 import 'package:expenses_tracker/features/login/ui/screens/login_screen.dart';
 import 'package:flutter/material.dart';
@@ -10,10 +11,18 @@ class Routing {
     switch (settings.name) {
       case Routes.login:
         return MaterialPageRoute(
-            builder: (context) => BlocProvider(
-                  create: (context) => LoginCubit(FirebaseHelper()),
-                  child: const LoginScreen(),
-                ));
+          builder: (context) => BlocProvider(
+            create: (context) => LoginCubit(FirebaseHelper()),
+            child: const LoginScreen(),
+          ),
+        );
+      case Routes.home:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => LoginCubit(FirebaseHelper()),
+            child: const HomeScreen(),
+          ),
+        );
       default:
         return MaterialPageRoute(builder: (context) => const NoRouteScreen());
     }
