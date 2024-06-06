@@ -1,4 +1,5 @@
 import 'package:expenses_tracker/core/networking/firebase_helper.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'login_state.dart';
@@ -6,10 +7,19 @@ part 'login_state.dart';
 class LoginCubit extends Cubit<LoginState> {
   final FirebaseHelper firebaseHelper;
   LoginCubit(this.firebaseHelper) : super(LoginInitial());
-  login(String email, String password) async {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  login() async {
     emit(LoginLoadingState());
     try {
-      firebaseHelper.loginUser(email: email, password: password).then(
+      await firebaseHelper
+          .loginUser(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim(),
+          )
+          .then(
             (value) => emit(LoginSuccessState()),
           );
     } catch (e) {

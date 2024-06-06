@@ -6,16 +6,22 @@ class MyTextFormField extends StatelessWidget {
   final String hintText;
   final Widget? suffixIcon;
   final bool isObscure;
+  final TextEditingController controller;
+  final String? Function(String?)? validator;
   const MyTextFormField({
     super.key,
     required this.hintText,
     this.suffixIcon,
     required this.isObscure,
+    required this.controller,
+    this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
+      controller: controller,
       obscureText: isObscure,
       style: FontHelper.font18GreyW300,
       decoration: InputDecoration(
