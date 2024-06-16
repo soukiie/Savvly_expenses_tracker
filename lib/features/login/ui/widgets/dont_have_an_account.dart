@@ -1,3 +1,4 @@
+import 'package:expenses_tracker/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/theming/fonts.dart';
@@ -14,7 +15,9 @@ class DontHaveAnAccount extends StatelessWidget {
       children: [
         Text('Dont have an account?!', style: FontHelper.font13WhiteW300),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, Routes.signup);
+          },
           child: const Text(
             'Sign Up',
           ),
