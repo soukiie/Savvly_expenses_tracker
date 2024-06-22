@@ -59,6 +59,7 @@ class _EmailAndPasswordState extends State<SignupFormFields> {
             controller: nameController,
             isObscure: false,
             hintText: 'Enter your name',
+            keyboardType: TextInputType.name,
           ),
           verticalSpace(20),
           Text(
@@ -76,29 +77,31 @@ class _EmailAndPasswordState extends State<SignupFormFields> {
             controller: emailController,
             isObscure: false,
             hintText: 'Enter your email',
+            keyboardType: TextInputType.emailAddress,
           ),
           verticalSpace(20),
           Text('Password', style: FontHelper.font18BoldWhite),
           verticalSpace(10),
           MyTextFormField(
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your password';
-                }
-                return null;
-              },
-              controller: passwordController,
-              isObscure: isObscure,
-              suffixIcon: IconButton(
-                  icon: isObscure
-                      ? const Icon(Icons.visibility)
-                      : const Icon(Icons.visibility_off),
-                  onPressed: () {
-                    setState(() {
-                      isObscure = !isObscure;
-                    });
-                  }),
-              hintText: 'Enter your password'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your password';
+              }
+              return null;
+            },
+            controller: passwordController,
+            isObscure: isObscure,
+            suffixIcon: IconButton(
+                icon: isObscure
+                    ? const Icon(Icons.visibility)
+                    : const Icon(Icons.visibility_off),
+                onPressed: () {
+                  setState(() {
+                    isObscure = !isObscure;
+                  });
+                }),
+            hintText: 'Enter your password',
+          ),
           verticalSpace(20),
           Text(
             'Password Confirmation',
