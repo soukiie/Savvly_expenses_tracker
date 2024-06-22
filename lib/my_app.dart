@@ -1,5 +1,5 @@
-import 'package:expenses_tracker/core/routing/routes.dart';
 import 'package:expenses_tracker/core/routing/routing.dart';
+import 'package:expenses_tracker/home_or_login.dart';
 // import 'package:expenses_tracker/features/login/ui/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
           useMaterial3: true,
         ),
-        initialRoute: Routes.login,
+        home: const HomeOrLogin(),
         onGenerateRoute: routing.onGenerateRoute,
       ),
     );

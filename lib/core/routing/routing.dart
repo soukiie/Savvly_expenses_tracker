@@ -3,6 +3,8 @@ import 'package:expenses_tracker/core/routing/routes.dart';
 import 'package:expenses_tracker/features/home/home_screen.dart';
 import 'package:expenses_tracker/features/login/logic/cubit/login_cubit.dart';
 import 'package:expenses_tracker/features/login/ui/screens/login_screen.dart';
+import 'package:expenses_tracker/features/signup/logic/cubit/signup_cubit.dart';
+import 'package:expenses_tracker/features/signup/ui/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,6 +25,14 @@ class Routing {
             child: const HomeScreen(),
           ),
         );
+      case Routes.signup:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => SignupCubit(FirebaseHelper()),
+            child: const SignupScreen(),
+          ),
+        );
+
       default:
         return MaterialPageRoute(builder: (context) => const NoRouteScreen());
     }
